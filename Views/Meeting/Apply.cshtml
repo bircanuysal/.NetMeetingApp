@@ -1,0 +1,26 @@
+@{
+    ViewBag.Title = "Başvuru Formu";
+}
+<h1 class="h4">Toplanti Katilim Formu</h1>
+<form method="post" action="/Meeting/Apply">
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" name="Name" id="Name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="Phone" class="form-label">Phone</label>
+        <input type="text" name="Phone" id="Phone" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" name="Phone" id="Email" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="WillAttend" class="form-label">Will Join</label>
+        <select type="WillAttend" id="WillAttend" class="form-select">
+            <option value="true">Yes</option>
+            <option value="true">No</option>
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Kaydet</button>
+</form>
