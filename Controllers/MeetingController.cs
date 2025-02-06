@@ -1,17 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
-
+using MeetingApp.Models;
+using System.Diagnostics;
 namespace MeetingApp.Controllers
 {
     public class MeetingController : Controller
     {
         [HttpGet]
-        public IActionResult Index(){
+        public IActionResult Apply(){
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Apply(){
-            return View();
+        [HttpPost]
+        public IActionResult Apply(UserInfo model){
+           Repository.CreateUser(model);
+           ViewBag.UserCount = Repository.Users.Where(i=>i.WillAttend ==true).Count(); 
+           return View("Thanks",model);
         }
 
         [HttpGet]
@@ -19,9 +22,6 @@ namespace MeetingApp.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Apply(string Name){
-            return View();
-        }
+        
     }
 }

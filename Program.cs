@@ -8,9 +8,11 @@ app.UseRouting();
 
 //app.MapDefaultControllerRoute();
 
+
 //default root yerine 
 app.MapControllerRoute(
     name:"default",
     pattern:"{Controller=Home}/{action=index}/{id?}"
 );
 app.Run();
+

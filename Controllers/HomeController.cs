@@ -10,7 +10,7 @@ namespace MeetingApp.Controllers
 
             int time = DateTime.Now.Hour;
 
-            var timeController = time > 12 ? "İyi Günler":"Günaydın";
+            var timeController = time > 12 ? "İyi Günler":"Günaydin";
             //ViewBag.UserName = "Bircan";
 
             ViewData["sayHi"] = timeController;
@@ -20,7 +20,6 @@ namespace MeetingApp.Controllers
                 Id=1,
                 Location="Ankara , ATO",
                 Date = new DateTime(2025,02,01,20,0,0),
-                NumberOfPeople =100
             };
             return View(meetingInfo);
         }
